@@ -146,7 +146,15 @@ async def create_event(input: EventCreate):
 @api_router.get("/events", response_model=List[Event])
 async def get_events():
     events = await db.events.find().sort("date", 1).to_list(1000)
-    return [Event(**{**event, "_id": event.get("_id", event.get("id"))}) for event in events]
+    result = []
+    for event in events:
+        # Convert ObjectId to string if present
+        if "_id" in event:
+            event["_id"] = str(event["_id"])
+        if "id" not in event and "_id" in event:
+            event["id"] = event["_id"]
+        result.append(Event(**event))
+    return result
 
 @api_router.delete("/events/{event_id}")
 async def delete_event(event_id: str):
