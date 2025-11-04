@@ -61,8 +61,9 @@ class APITester:
     def test_newsletter_subscription(self):
         """Test POST /api/newsletter - newsletter subscription"""
         try:
-            # Test valid subscription
-            payload = {"email": "test@example.com"}
+            # Test valid subscription with unique email
+            unique_email = f"test_{datetime.now().strftime('%Y%m%d_%H%M%S')}@example.com"
+            payload = {"email": unique_email}
             response = requests.post(f"{API_BASE}/newsletter", json=payload, timeout=10)
             
             if response.status_code == 200:
