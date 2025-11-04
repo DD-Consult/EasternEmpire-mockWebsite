@@ -36,7 +36,7 @@ const Gigs = () => {
       <section className="relative py-32 px-4" style={{
         backgroundImage: 'url(https://images.squarespace-cdn.com/content/v1/59d4e29ac027d8f12df47f49/1567687980262-R01VKBQKZQQ0PU6AVYBH/Eternal+The+Show-9.jpg?format=2500w)',
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'center top',
         backgroundAttachment: 'fixed'
       }}>
         <div className="absolute inset-0 bg-black/70"></div>
