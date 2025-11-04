@@ -36,8 +36,13 @@ const Navigation = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link to="/" className="text-2xl font-bold tracking-wider hover:text-gray-300 transition-colors">
-              EASTERN EMPIRE
+            <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+              <img 
+                src="https://images.squarespace-cdn.com/content/v1/59d4e29ac027d8f12df47f49/1507200389819-FHBIG94J03LC3SPGC9LF/EElogowhite.png?format=1500w" 
+                alt="Eastern Empire Logo" 
+                className="h-12 w-auto"
+              />
+              <span className="text-2xl font-bold tracking-wider">EASTERN EMPIRE</span>
             </Link>
 
             {/* Desktop Navigation */}
