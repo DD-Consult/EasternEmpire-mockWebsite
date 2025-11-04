@@ -101,3 +101,125 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: "Eastern Empire API Testing - Test all backend API endpoints for health check, newsletter subscription, contact form, events, and booking inquiries"
+
+backend:
+  - task: "Health Check API"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "GET /api/ endpoint working correctly, returns 'Eastern Empire API' message"
+
+  - task: "Newsletter Subscription API"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "POST /api/newsletter endpoint working correctly, accepts new subscriptions and properly rejects duplicates with 400 status"
+
+  - task: "Newsletter Retrieval API"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "GET /api/newsletter endpoint working correctly, returns list of all subscriptions"
+
+  - task: "Contact Form API"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "POST /api/contact endpoint working correctly, accepts contact form submissions with all required fields"
+
+  - task: "Contact Messages Retrieval API"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "GET /api/contact endpoint working correctly, returns list of contact messages sorted by creation date"
+
+  - task: "Events Retrieval API"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 1
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: false
+        agent: "testing"
+        comment: "GET /api/events endpoint initially failed with 500 error due to MongoDB ObjectId not being converted to string"
+      - working: true
+        agent: "testing"
+        comment: "Fixed ObjectId conversion issue in get_events function. Now returns 3 seeded events correctly"
+
+  - task: "Booking Inquiry API"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "POST /api/bookings endpoint working correctly, accepts booking inquiries with all required fields"
+
+  - task: "Booking Retrieval API"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "GET /api/bookings endpoint working correctly, returns list of booking inquiries sorted by creation date"
+
+frontend:
+  # Frontend testing not performed as per instructions
+
+metadata:
+  created_by: "testing_agent"
+  version: "1.0"
+  test_sequence: 1
+  run_ui: false
+
+test_plan:
+  current_focus:
+    - "All backend API endpoints tested and working"
+  stuck_tasks: []
+  test_all: true
+  test_priority: "high_first"
+
+agent_communication:
+  - agent: "testing"
+    message: "Completed comprehensive testing of all Eastern Empire API endpoints. Found and fixed one critical issue with Events API ObjectId conversion. All 8 API endpoints now working correctly: health check, newsletter subscription/retrieval, contact form/retrieval, events retrieval, and booking inquiry/retrieval. Created backend_test.py for future testing. All CRUD operations validated with proper error handling."
