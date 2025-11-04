@@ -9,7 +9,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">EASTERN EMPIRE</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <img 
+                src="https://images.squarespace-cdn.com/content/v1/59d4e29ac027d8f12df47f49/1507214299757-FLXETPEFNVDGL4D3ZIX1/EElogowhite.png?format=2500w" 
+                alt="Eastern Empire Logo" 
+                className="h-16 w-auto"
+              />
+              <h3 className="text-2xl font-bold">EASTERN EMPIRE</h3>
+            </div>
             <p className="text-gray-400 mb-4">
               Sydney's finest ensemble of South Asian artists. Eclectic. Electric. And unlike any other.
             </p>
