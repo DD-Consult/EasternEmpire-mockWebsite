@@ -309,7 +309,7 @@ const Home = () => {
             ></iframe>
           </div>
           <div className="bg-zinc-900 p-8 rounded-lg">
-            <p className="text-gray-300 mb-4">
+            <p className="text-gray-400 text-xs leading-relaxed mb-4">
               Keys : Gana Aruneswaran<br />
               Bass guitar: Kasturi Murugavel<br />
               Percussion: Charou Ram<br />
