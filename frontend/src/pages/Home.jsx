@@ -133,88 +133,43 @@ const Home = () => {
       </section>
 
       {/* Image Gallery Section */}
-      <section className="py-0">
-        <div className="w-full">
+      <section className="py-0 relative">
+        <div className="relative w-full h-screen">
+          {/* Current Image */}
           <img
-            src="https://images.squarespace-cdn.com/content/v1/59d4e29ac027d8f12df47f49/1627188930727-XRIP0GJG3ZCWM9POLMPL/EEE_FacebookBanner_820x312_6A.jpg?format=2500w"
-            alt="Eastern Empire Band"
-            className="w-full h-auto"
+            src={galleryImages[currentImageIndex]}
+            alt={`Performance ${currentImageIndex + 1}`}
+            className="w-full h-full object-cover cursor-pointer"
+            onClick={nextImage}
           />
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/59d4e29ac027d8f12df47f49/1507208572358-ZU73JBVWHOH9W16IN9UH/16198942527_80d315f6c8_o.jpg?format=2500w"
-            alt="Performance"
-            className="w-full h-auto"
-          />
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/59d4e29ac027d8f12df47f49/1567687980262-R01VKBQKZQQ0PU6AVYBH/Eternal+The+Show-9.jpg?format=2500w"
-            alt="Performance"
-            className="w-full h-auto"
-          />
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/59d4e29ac027d8f12df47f49/1567688161854-PHS7VPBUBCZ45VBOJLRA/Eternal+The+Show-3.jpg?format=2500w"
-            alt="Performance"
-            className="w-full h-auto"
-          />
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/59d4e29ac027d8f12df47f49/1567688308635-MWVZ15D9TU3O2ZYYAZCM/Eternal+The+Show-20.jpg?format=2500w"
-            alt="Performance"
-            className="w-full h-auto"
-          />
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/59d4e29ac027d8f12df47f49/1567688440851-OCWDWNMFXWG2SM43XRJI/Eternal+The+Show-21.jpg?format=2500w"
-            alt="Performance"
-            className="w-full h-auto"
-          />
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/59d4e29ac027d8f12df47f49/1507208982602-8F1XOKYVLCTL9T21EP1E/15783890164_657075ea2f_o.jpg?format=2500w"
-            alt="Performance"
-            className="w-full h-auto"
-          />
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/59d4e29ac027d8f12df47f49/1507209115020-T8XLJ964FSBGPS0WH404/26597747982_2c796675b4_o+%281%29.jpg?format=2500w"
-            alt="Performance"
-            className="w-full h-auto"
-          />
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/59d4e29ac027d8f12df47f49/1507208917272-N3RMAJX23AEEQT8DCORX/16358901526_39c7c27d23_o.jpg?format=2500w"
-            alt="Performance"
-            className="w-full h-auto"
-          />
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/59d4e29ac027d8f12df47f49/1507209565971-LASKUQY0VOL9CHOBPXNY/26663986496_d9f7f040fa_o.jpg?format=2500w"
-            alt="Performance"
-            className="w-full h-auto"
-          />
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/59d4e29ac027d8f12df47f49/1507209859439-LKOL5IXKIH2YQ4H60ZKZ/26624593331_0639601b88_o+%281%29.jpg?format=2500w"
-            alt="Performance"
-            className="w-full h-auto"
-          />
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/59d4e29ac027d8f12df47f49/1507209948785-1B3H2WJ7FCKSNVI4ODEG/ABL-5.jpg?format=2500w"
-            alt="Performance"
-            className="w-full h-auto"
-          />
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/59d4e29ac027d8f12df47f49/1507210332539-YI23GP65QJI2MBP0PIDF/ABL-148.jpg?format=2500w"
-            alt="Performance"
-            className="w-full h-auto"
-          />
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/59d4e29ac027d8f12df47f49/1567688335012-74B4WNEZB1VX4S4CKOZ7/Eternal+The+Show-27.jpg?format=2500w"
-            alt="Performance"
-            className="w-full h-auto"
-          />
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/59d4e29ac027d8f12df47f49/1569417665485-IIGV7JN070J6UY4B6WDD/Eternal+2019_Medium+Res-325.jpg?format=2500w"
-            alt="Performance"
-            className="w-full h-auto"
-          />
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/59d4e29ac027d8f12df47f49/1508253226485-6NRS44HH9QOK5QJSSIO5/bw-2.jpg?format=2500w"
-            alt="Performance"
-            className="w-full h-auto"
-          />
+          
+          {/* Navigation Arrows */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              prevImage();
+            }}
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-4 rounded-full transition-all duration-300 z-10"
+            aria-label="Previous image"
+          >
+            <ChevronLeft className="w-8 h-8" />
+          </button>
+          
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              nextImage();
+            }}
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-4 rounded-full transition-all duration-300 z-10"
+            aria-label="Next image"
+          >
+            <ChevronRight className="w-8 h-8" />
+          </button>
+
+          {/* Image Counter */}
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-full text-sm">
+            {currentImageIndex + 1} / {galleryImages.length}
+          </div>
         </div>
       </section>
 
