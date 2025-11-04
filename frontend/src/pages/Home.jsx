@@ -165,11 +165,6 @@ const Home = () => {
           >
             <ChevronRight className="w-8 h-8" />
           </button>
-
-          {/* Image Counter */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-full text-sm">
-            {currentImageIndex + 1} / {galleryImages.length}
-          </div>
         </div>
       </section>
 
