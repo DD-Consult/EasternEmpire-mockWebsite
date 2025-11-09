@@ -44,7 +44,7 @@ const Music = () => {
       {/* Hero Section */}
       <section className="relative py-32 px-4" style={{
         backgroundImage: 'url(https://images.squarespace-cdn.com/content/v1/59d4e29ac027d8f12df47f49/1507210332539-YI23GP65QJI2MBP0PIDF/ABL-148.jpg?format=2500w)',
-        backgroundSize: 'cover',
+        backgroundSize: '110%',
         backgroundPosition: 'center 65%',
         backgroundAttachment: 'fixed'
       }}>
