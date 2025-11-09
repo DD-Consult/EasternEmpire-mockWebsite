@@ -292,27 +292,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-20 px-4 bg-zinc-900">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold mb-8 text-center">We are EASTERN EMPIRE</h2>
-          <p className="text-xl text-gray-300 leading-relaxed text-center mb-12">
-            Eclectic. Electric. And unlike any other. Eastern Empire is Sydney's finest ensemble of South Asian artists.
-            Performing together since 2011, the band has rocked Sydney's biggest stages and festivals with its inimitable
-            interpretation of Indian music. Having collaborated with a host of international acts, Eastern Empire has been
-            influential in popularising South Asian music in the Sydney music scene, and is now set to leave its mark on
-            the world stage.
-          </p>
-          <div className="text-center">
-            <Link to="/bio">
-              <Button size="lg" className="bg-white text-black hover:bg-gray-200 px-8 py-6 text-lg font-semibold">
-                Learn More About Us
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Featured Video Section */}
       <section className="py-20 px-4 bg-black">
         <div className="max-w-6xl mx-auto">
