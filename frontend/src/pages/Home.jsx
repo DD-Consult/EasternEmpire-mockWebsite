@@ -309,16 +309,8 @@ const Home = () => {
             ></iframe>
           </div>
           <div className="bg-zinc-900 p-8 rounded-lg">
-            <p className="text-gray-400 text-xs leading-relaxed mb-4">
-              Keys : Gana Aruneswaran<br />
-              Bass guitar: Kasturi Murugavel<br />
-              Percussion: Charou Ram<br />
-              Recorded and Mixed By : Charou Ram<br />
-              Mastering : Janakan Raj<br />
-              Executive Producer - Eastern Empire<br />
-              Direction - Shivayan (Film Drop)<br />
-              Video Production - Film Drop<br />
-              An Eastern Empire cover
+            <p className="text-gray-400 text-xs mb-4">
+              Keys : Gana Aruneswaran | Bass guitar: Kasturi Murugavel | Percussion: Charou Ram | Recorded and Mixed By : Charou Ram | Mastering : Janakan Raj | Executive Producer - Eastern Empire | Direction - Shivayan (Film Drop) | Video Production - Film Drop | An Eastern Empire cover
             </p>
             <div className="text-center mt-8">
               <Link to="/music">
