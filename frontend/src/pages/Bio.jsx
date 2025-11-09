@@ -63,7 +63,7 @@ const Bio = () => {
       {/* Hero Section */}
       <section className="relative py-32 px-4" style={{
         backgroundImage: 'url(https://images.squarespace-cdn.com/content/v1/59d4e29ac027d8f12df47f49/1627188930727-XRIP0GJG3ZCWM9POLMPL/EEE_FacebookBanner_820x312_6A.jpg?format=2500w)',
-        backgroundSize: 'cover',
+        backgroundSize: '110%',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
       }}>
