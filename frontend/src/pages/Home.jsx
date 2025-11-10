@@ -244,33 +244,39 @@ const Home = () => {
 
       {/* Featured Video Section */}
       <section className="py-20 px-4 bg-black">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-8">
-            <h2 className="text-5xl font-bold mb-4 text-center">THODA THODA</h2>
-            <p className="text-xl text-gray-400 text-center mb-6">05.09.2019 'THODA THODA' PERFORMED BY GIRE & GANA</p>
-            <p className="text-lg text-gray-300 text-center max-w-3xl mx-auto leading-relaxed">
-              A stunning fusion of traditional South Asian melodies with contemporary arrangements. This live studio performance showcases Eastern Empire's signature sound—combining virtuosic instrumentation with soulful vocals. Watch as Gire and Gana bring this beloved track to life, demonstrating the eclectic, electric energy that has made Eastern Empire Sydney's premier South Asian ensemble.
-            </p>
-          </div>
-          <div className="aspect-video mb-8">
-            <iframe
-              className="w-full h-full"
-              src="https://www.youtube.com/embed/xkEmYQvJ_68"
-              title="Thoda Thoda"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-          <div className="bg-zinc-900 p-8 rounded-lg">
-            <p className="text-gray-400 text-xs mb-4">
-              Keys : Gana Aruneswaran | Bass guitar: Kasturi Murugavel | Percussion: Charou Ram | Recorded and Mixed By : Charou Ram | Mastering : Janakan Raj | Executive Producer - Eastern Empire | Direction - Shivayan (Film Drop) | Video Production - Film Drop | An Eastern Empire cover
-            </p>
-            <div className="text-center mt-8">
-              <Link to="/music">
-                <Button size="lg" className="bg-white text-black hover:bg-gray-200 px-8 py-6 text-lg font-semibold">
-                  See More Music
-                </Button>
-              </Link>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Content */}
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-5xl font-bold mb-4">THODA THODA</h2>
+                <p className="text-xl text-gray-400 mb-6">05.09.2019 'THODA THODA' PERFORMED BY GIRE & GANA</p>
+                <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                  A stunning fusion of traditional South Asian melodies with contemporary arrangements. This live studio performance showcases Eastern Empire's signature sound—combining virtuosic instrumentation with soulful vocals. Watch as Gire and Gana bring this beloved track to life, demonstrating the eclectic, electric energy that has made Eastern Empire Sydney's premier South Asian ensemble.
+                </p>
+              </div>
+              
+              <div className="bg-zinc-900 p-6 rounded-lg">
+                <p className="text-gray-400 text-xs mb-6 leading-relaxed">
+                  Keys : Gana Aruneswaran | Bass guitar: Kasturi Murugavel | Percussion: Charou Ram | Recorded and Mixed By : Charou Ram | Mastering : Janakan Raj | Executive Producer - Eastern Empire | Direction - Shivayan (Film Drop) | Video Production - Film Drop | An Eastern Empire cover
+                </p>
+                <Link to="/music">
+                  <Button size="lg" className="bg-white text-black hover:bg-gray-200 px-8 py-6 text-lg font-semibold w-full">
+                    See More Music
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Column - Video */}
+            <div className="aspect-video">
+              <iframe
+                className="w-full h-full rounded-lg"
+                src="https://www.youtube.com/embed/xkEmYQvJ_68"
+                title="Thoda Thoda"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             </div>
           </div>
         </div>
