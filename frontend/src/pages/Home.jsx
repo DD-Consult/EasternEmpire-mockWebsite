@@ -247,7 +247,10 @@ const Home = () => {
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
             <h2 className="text-5xl font-bold mb-4 text-center">THODA THODA</h2>
-            <p className="text-xl text-gray-400 text-center mb-2">05.09.2019 'THODA THODA' PERFORMED BY GIRE & GANA</p>
+            <p className="text-xl text-gray-400 text-center mb-6">05.09.2019 'THODA THODA' PERFORMED BY GIRE & GANA</p>
+            <p className="text-lg text-gray-300 text-center max-w-3xl mx-auto leading-relaxed">
+              A stunning fusion of traditional South Asian melodies with contemporary arrangements. This live studio performance showcases Eastern Empire's signature sound—combining virtuosic instrumentation with soulful vocals. Watch as Gire and Gana bring this beloved track to life, demonstrating the eclectic, electric energy that has made Eastern Empire Sydney's premier South Asian ensemble.
+            </p>
           </div>
           <div className="aspect-video mb-8">
             <iframe
