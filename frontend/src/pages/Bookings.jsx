@@ -58,10 +58,10 @@ const Bookings = () => {
         }
       }
       
-      toast({
-        title: 'Booking Inquiry Sent!',
-        description: 'We\'ll get back to you within 24 hours.',
-      });
+      // Show confirmation dialog
+      setShowConfirmation(true);
+      
+      // Reset form
       setBookingForm({
         name: '',
         email: '',
