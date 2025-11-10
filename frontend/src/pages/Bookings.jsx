@@ -187,7 +187,7 @@ const Bookings = () => {
             <CardContent className="p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label className="block text-sm font-medium mb-2">Full Name *</label>
+                  <label className="block text-sm font-medium mb-2 text-white">Full Name *</label>
                   <Input
                     type="text"
                     placeholder="Enter your full name"
@@ -199,7 +199,7 @@ const Bookings = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium mb-2">Email *</label>
+                    <label className="block text-sm font-medium mb-2 text-white">Email *</label>
                     <Input
                       type="email"
                       placeholder="your.email@example.com"
@@ -210,19 +210,18 @@ const Bookings = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-2">Phone *</label>
+                    <label className="block text-sm font-medium mb-2 text-white">Phone</label>
                     <Input
                       type="tel"
                       placeholder="04XX XXX XXX"
                       value={bookingForm.phone}
                       onChange={(e) => setBookingForm({ ...bookingForm, phone: e.target.value })}
-                      required
                       className="bg-zinc-900 border-zinc-700 text-white placeholder:text-gray-500"
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">Event Type *</label>
+                  <label className="block text-sm font-medium mb-2 text-white">Event Type *</label>
                   <Select
                     value={bookingForm.eventType}
                     onValueChange={(value) => setBookingForm({ ...bookingForm, eventType: value })}
@@ -242,28 +241,26 @@ const Bookings = () => {
                   </Select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">Event Date *</label>
+                  <label className="block text-sm font-medium mb-2 text-white">Event Date</label>
                   <Input
                     type="date"
                     value={bookingForm.eventDate}
                     onChange={(e) => setBookingForm({ ...bookingForm, eventDate: e.target.value })}
-                    required
-                    className="bg-zinc-900 border-zinc-700 text-white"
+                    className="bg-zinc-900 border-zinc-700 text-white [color-scheme:dark]"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">Venue/Location *</label>
+                  <label className="block text-sm font-medium mb-2 text-white">Venue/Location</label>
                   <Input
                     type="text"
                     placeholder="e.g., Sydney Opera House or TBD"
                     value={bookingForm.venue}
                     onChange={(e) => setBookingForm({ ...bookingForm, venue: e.target.value })}
-                    required
                     className="bg-zinc-900 border-zinc-700 text-white placeholder:text-gray-500"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">Preferred Band Configuration (Optional)</label>
+                  <label className="block text-sm font-medium mb-2 text-gray-300">Preferred Band Configuration (Optional)</label>
                   <Select
                     value={bookingForm.configuration}
                     onValueChange={(value) => setBookingForm({ ...bookingForm, configuration: value })}
@@ -280,7 +277,7 @@ const Bookings = () => {
                   </Select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">Additional Details (Optional)</label>
+                  <label className="block text-sm font-medium mb-2 text-gray-300">Additional Details (Optional)</label>
                   <Textarea
                     value={bookingForm.message}
                     onChange={(e) => setBookingForm({ ...bookingForm, message: e.target.value })}
