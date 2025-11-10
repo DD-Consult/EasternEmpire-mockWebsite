@@ -231,7 +231,6 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Events Retrieval API with updated seed data"
     - "Gigs page dynamic event display"
   stuck_tasks: []
   test_all: false
