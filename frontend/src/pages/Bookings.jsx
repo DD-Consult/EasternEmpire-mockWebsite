@@ -159,7 +159,7 @@ const Bookings = () => {
               return (
                 <Card key={index} className="bg-zinc-900 border-zinc-800 text-center hover:border-zinc-600 transition-all duration-300">
                   <CardHeader>
-                    <Icon className="w-12 h-12 mx-auto mb-4" />
+                    <Icon className="w-12 h-12 mx-auto mb-4 text-white" />
                     <CardTitle className="text-xl text-white">{config.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
