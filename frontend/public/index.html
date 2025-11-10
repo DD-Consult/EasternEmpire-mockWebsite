@@ -58,6 +58,20 @@
     </head>
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
+        
+        <!-- Hidden form for Netlify Forms detection -->
+        <form name="booking-form" netlify netlify-honeypot="bot-field" hidden>
+            <input type="text" name="name" />
+            <input type="email" name="email" />
+            <input type="tel" name="phone" />
+            <input type="text" name="eventType" />
+            <input type="date" name="eventDate" />
+            <input type="text" name="venue" />
+            <input type="text" name="configuration" />
+            <textarea name="message"></textarea>
+            <input type="text" name="bot-field" />
+        </form>
+        
         <div id="root"></div>
         <!--
       This HTML file is a template.
