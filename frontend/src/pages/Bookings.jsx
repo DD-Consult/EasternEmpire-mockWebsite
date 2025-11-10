@@ -15,6 +15,7 @@ const API = `${BACKEND_URL}/api`;
 const Bookings = () => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState(false);
   const [bookingForm, setBookingForm] = useState({
     name: '',
     email: '',
