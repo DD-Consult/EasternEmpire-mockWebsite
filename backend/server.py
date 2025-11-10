@@ -78,10 +78,10 @@ class BookingInquiry(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     name: str
     email: EmailStr
-    phone: str
+    phone: Optional[str] = None
     eventType: str
-    eventDate: str
-    venue: str
+    eventDate: Optional[str] = None
+    venue: Optional[str] = None
     guestCount: Optional[str] = None
     configuration: Optional[str] = None
     message: Optional[str] = None
@@ -91,10 +91,10 @@ class BookingInquiry(BaseModel):
 class BookingInquiryCreate(BaseModel):
     name: str
     email: EmailStr
-    phone: str
+    phone: Optional[str] = None
     eventType: str
-    eventDate: str
-    venue: str
+    eventDate: Optional[str] = None
+    venue: Optional[str] = None
     guestCount: Optional[str] = None
     configuration: Optional[str] = None
     message: Optional[str] = None
