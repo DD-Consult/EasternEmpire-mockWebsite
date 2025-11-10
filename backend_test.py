@@ -140,22 +140,95 @@ class APITester:
             self.log_result("Get Contact Messages", False, f"Error: {str(e)}")
     
     def test_get_events(self):
-        """Test GET /api/events - get all events (should return 3 seeded events)"""
+        """Test GET /api/events - comprehensive validation of seeded events"""
         try:
             response = requests.get(f"{API_BASE}/events", timeout=10)
-            if response.status_code == 200:
-                data = response.json()
-                if isinstance(data, list):
-                    if len(data) >= 3:
-                        self.log_result("Get Events", True, f"Retrieved {len(data)} events (expected 3+ seeded events)")
-                    else:
-                        self.log_result("Get Events", False, f"Expected 3+ seeded events, got {len(data)}")
-                else:
-                    self.log_result("Get Events", False, f"Expected list, got: {type(data)}")
-            else:
+            if response.status_code != 200:
                 self.log_result("Get Events", False, f"Status {response.status_code}: {response.text}")
+                return
+                
+            data = response.json()
+            if not isinstance(data, list):
+                self.log_result("Get Events", False, f"Expected list, got: {type(data)}")
+                return
+            
+            # Check we have exactly 3 events
+            if len(data) != 3:
+                self.log_result("Get Events", False, f"Expected exactly 3 events, got {len(data)}")
+                return
+            
+            # Expected dates in chronological order
+            expected_dates = ["2025-12-15", "2026-01-20", "2026-02-25"]
+            required_fields = ["title", "venue", "address", "date", "time", "description", "ticketUrl"]
+            
+            # Validate each event
+            for i, event in enumerate(data):
+                # Check all required fields are present
+                missing_fields = [field for field in required_fields if field not in event]
+                if missing_fields:
+                    self.log_result("Get Events", False, f"Event {i+1} missing fields: {missing_fields}")
+                    return
+                
+                # Check ObjectId conversion (should not have MongoDB ObjectId)
+                if "_id" in event and not isinstance(event["_id"], str):
+                    self.log_result("Get Events", False, f"Event {i+1} has non-string _id: {type(event['_id'])}")
+                    return
+                
+                # Validate date format and expected dates
+                event_date = event.get("date", "")
+                if event_date != expected_dates[i]:
+                    self.log_result("Get Events", False, f"Event {i+1} has date '{event_date}', expected '{expected_dates[i]}'")
+                    return
+            
+            # Check chronological sorting
+            event_dates = [event["date"] for event in data]
+            if event_dates != expected_dates:
+                self.log_result("Get Events", False, f"Events not in chronological order. Got: {event_dates}, Expected: {expected_dates}")
+                return
+            
+            # All validations passed
+            event_titles = [event["title"] for event in data]
+            self.log_result("Get Events", True, f"✅ All validations passed: 3 events with correct dates {expected_dates}, proper structure, and chronological order. Events: {event_titles}")
+            
         except Exception as e:
             self.log_result("Get Events", False, f"Error: {str(e)}")
+    
+    def test_events_detailed_validation(self):
+        """Detailed validation of event structure and content"""
+        try:
+            response = requests.get(f"{API_BASE}/events", timeout=10)
+            if response.status_code != 200:
+                self.log_result("Events Detailed Validation", False, f"Status {response.status_code}: {response.text}")
+                return
+                
+            data = response.json()
+            
+            # Print detailed event information for verification
+            print("\n📋 DETAILED EVENT VALIDATION:")
+            print("=" * 50)
+            
+            for i, event in enumerate(data, 1):
+                print(f"\n🎵 Event {i}:")
+                print(f"  Title: {event.get('title', 'N/A')}")
+                print(f"  Venue: {event.get('venue', 'N/A')}")
+                print(f"  Address: {event.get('address', 'N/A')}")
+                print(f"  Date: {event.get('date', 'N/A')}")
+                print(f"  Time: {event.get('time', 'N/A')}")
+                print(f"  Description: {event.get('description', 'N/A')[:100]}...")
+                print(f"  Ticket URL: {event.get('ticketUrl', 'N/A')}")
+                print(f"  ID Type: {type(event.get('_id', event.get('id', 'N/A')))}")
+            
+            print("=" * 50)
+            
+            # Validate no serialization errors (all values should be JSON serializable)
+            try:
+                json.dumps(data)
+                self.log_result("Events Detailed Validation", True, "All events are properly JSON serializable with no ObjectId issues")
+            except TypeError as e:
+                self.log_result("Events Detailed Validation", False, f"JSON serialization error: {str(e)}")
+                
+        except Exception as e:
+            self.log_result("Events Detailed Validation", False, f"Error: {str(e)}")
     
     def test_booking_inquiry(self):
         """Test POST /api/bookings - booking inquiry"""
