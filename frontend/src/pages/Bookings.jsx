@@ -314,9 +314,9 @@ const Bookings = () => {
       {/* CTA Section */}
       <section className="py-20 px-4 bg-black">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Make Your Event Unforgettable?</h2>
+          <h2 className="text-4xl font-bold mb-6">Have Other Questions?</h2>
           <p className="text-xl text-gray-300 mb-8">
-            Contact us today to discuss your event requirements and receive a custom quote.
+            Feel free to reach out directly via email or Facebook. We're here to help!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
