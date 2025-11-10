@@ -33,11 +33,11 @@ const Bookings = () => {
       // Encode form data for Netlify
       const encode = (data) => {
         return Object.keys(data)
-          .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+          .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key] || ''))
           .join("&");
       };
 
-      // Submit to Netlify Forms
+      // Submit to Netlify Forms (works in both development and production)
       await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -47,8 +47,14 @@ const Bookings = () => {
         })
       });
 
-      // Also submit to backend API
-      await axios.post(`${API}/bookings`, bookingForm);
+      // Also submit to backend API if available
+      if (BACKEND_URL && API) {
+        try {
+          await axios.post(`${API}/bookings`, bookingForm);
+        } catch (apiError) {
+          console.log('Backend API submission failed, but Netlify form captured the data');
+        }
+      }
       
       toast({
         title: 'Booking Inquiry Sent!',
