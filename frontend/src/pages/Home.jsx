@@ -224,6 +224,25 @@ const Home = () => {
           >
             <ChevronRight className="w-8 h-8" />
           </button>
+
+          {/* Indicator Dots */}
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+            {galleryImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCurrentImageIndex(index);
+                }}
+                className={`transition-all duration-300 rounded-full ${
+                  index === currentImageIndex
+                    ? 'w-8 h-2 bg-white'
+                    : 'w-2 h-2 bg-white/50 hover:bg-white/75'
+                }`}
+                aria-label={`Go to image ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
