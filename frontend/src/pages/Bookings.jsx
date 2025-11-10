@@ -185,7 +185,11 @@ const Bookings = () => {
           </div>
           <Card className="bg-black border-zinc-800">
             <CardContent className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6" name="booking-form" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="booking-form" />
+                <div className="hidden">
+                  <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </div>
                 <div>
                   <label className="block text-sm font-medium mb-2 text-white">Full Name *</label>
                   <Input
