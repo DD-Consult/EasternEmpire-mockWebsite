@@ -365,6 +365,31 @@ const Bookings = () => {
           </div>
         </div>
       </section>
+
+      {/* Confirmation Dialog */}
+      <Dialog open={showConfirmation} onOpenChange={setShowConfirmation}>
+        <DialogContent className="bg-black border-zinc-800 text-white sm:max-w-md">
+          <DialogHeader>
+            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-500/10">
+              <CheckCircle className="h-6 w-6 text-green-500" />
+            </div>
+            <DialogTitle className="text-center text-2xl font-bold text-white">
+              Thank You!
+            </DialogTitle>
+            <DialogDescription className="text-center text-gray-300 pt-2">
+              Your booking inquiry has been successfully submitted. We'll review your request and get back to you within 24 hours.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="mt-6">
+            <Button
+              onClick={() => setShowConfirmation(false)}
+              className="w-full bg-white text-black hover:bg-gray-200"
+            >
+              Close
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
