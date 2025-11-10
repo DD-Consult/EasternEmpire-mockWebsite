@@ -6,25 +6,37 @@ import { MapPin, Clock, Music } from 'lucide-react';
 import axios from 'axios';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+const API = BACKEND_URL ? `${BACKEND_URL}/api` : null;
 
 const Gigs = () => {
   const [events, setEvents] = useState([]);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetchEvents();
   }, []);
 
   const fetchEvents = async () => {
+    // If no backend URL is configured, don't try to fetch
+    if (!API) {
+      console.log('No backend URL configured');
+      setLoading(false);
+      return;
+    }
+
     try {
       const response = await axios.get(`${API}/events`);
-      setEvents(response.data);
+      setEvents(response.data || []);
+      setError(null);
     } catch (error) {
       console.error('Failed to fetch events:', error);
+      setError('Unable to load events at this time.');
+      setEvents([]);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   const upcomingEvents = events.filter(event => new Date(event.date) >= new Date());
