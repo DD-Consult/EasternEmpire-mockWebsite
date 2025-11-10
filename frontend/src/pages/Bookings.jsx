@@ -41,7 +41,6 @@ const Bookings = () => {
         eventType: '',
         eventDate: '',
         venue: '',
-        guestCount: '',
         configuration: '',
         message: ''
       });
