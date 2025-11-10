@@ -13,13 +13,6 @@ const API = `${BACKEND_URL}/api`;
 const Home = () => {
   const { toast } = useToast();
   const [newsletterEmail, setNewsletterEmail] = useState('');
-  const [contactForm, setContactForm] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
   const [loading, setLoading] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
