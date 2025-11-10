@@ -283,6 +283,7 @@ class APITester:
         self.test_contact_form()
         self.test_get_contact_messages()
         self.test_get_events()
+        self.test_events_detailed_validation()
         self.test_booking_inquiry()
         self.test_get_bookings()
         
