@@ -98,6 +98,79 @@ const Bio = () => {
         </div>
       </section>
 
+      {/* Band Members */}
+      <section className="py-20 px-4 bg-black">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <Music className="w-16 h-16 mx-auto mb-6" />
+            <h2 className="text-4xl font-bold mb-4">Meet the Band</h2>
+            <p className="text-xl text-gray-400">The talented musicians behind Eastern Empire</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {members.map((member, index) => (
+              <Card key={index} className="bg-zinc-900 border-zinc-800 overflow-hidden hover:border-zinc-700 transition-all duration-300">
+                <div className="aspect-square overflow-hidden">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">{member.name}</h3>
+                  <p className="text-gray-400 font-semibold mb-4">{member.role}</p>
+                  <p className="text-gray-300">{member.bio}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What We Do */}
+      <section className="py-20 px-4 bg-zinc-900">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <Globe className="w-16 h-16 mx-auto mb-6" />
+            <h2 className="text-4xl font-bold mb-4">What We Do</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Card className="bg-black border-zinc-800">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-4">South Asian Weddings</h3>
+                <p className="text-gray-300">
+                  We specialize in creating the perfect ambiance for South Asian weddings, from elegant string quartets for ceremonies to high-energy performances for receptions.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-black border-zinc-800">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-4">Corporate Events</h3>
+                <p className="text-gray-300">
+                  Add cultural flair to your corporate functions with our sophisticated ensemble performances, perfect for galas, launches, and celebrations.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-black border-zinc-800">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-4">Festivals & Concerts</h3>
+                <p className="text-gray-300">
+                  Our festival-ready performances bring energy and authenticity to major stages, captivating diverse audiences with our eclectic sound.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-black border-zinc-800">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-4">Private Events</h3>
+                <p className="text-gray-300">
+                  From intimate gatherings to grand celebrations, we tailor our performances to suit your unique occasion and venue.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Timeline */}
       <section className="py-20 px-4 bg-black">
         <div className="max-w-5xl mx-auto">
@@ -119,79 +192,6 @@ const Bio = () => {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Band Members */}
-      <section className="py-20 px-4 bg-zinc-900">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <Music className="w-16 h-16 mx-auto mb-6" />
-            <h2 className="text-4xl font-bold mb-4">Meet the Band</h2>
-            <p className="text-xl text-gray-400">The talented musicians behind Eastern Empire</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {members.map((member, index) => (
-              <Card key={index} className="bg-black border-zinc-800 overflow-hidden hover:border-zinc-600 transition-all duration-300">
-                <div className="aspect-square overflow-hidden">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-bold text-white mb-2">{member.name}</h3>
-                  <p className="text-gray-400 font-semibold mb-4">{member.role}</p>
-                  <p className="text-gray-300">{member.bio}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What We Do */}
-      <section className="py-20 px-4 bg-black">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <Globe className="w-16 h-16 mx-auto mb-6" />
-            <h2 className="text-4xl font-bold mb-4">What We Do</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="bg-zinc-900 border-zinc-800">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4">South Asian Weddings</h3>
-                <p className="text-gray-300">
-                  We specialize in creating the perfect ambiance for South Asian weddings, from elegant string quartets for ceremonies to high-energy performances for receptions.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-zinc-900 border-zinc-800">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4">Corporate Events</h3>
-                <p className="text-gray-300">
-                  Add cultural flair to your corporate functions with our sophisticated ensemble performances, perfect for galas, launches, and celebrations.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-zinc-900 border-zinc-800">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4">Festivals & Concerts</h3>
-                <p className="text-gray-300">
-                  Our festival-ready performances bring energy and authenticity to major stages, captivating diverse audiences with our eclectic sound.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-zinc-900 border-zinc-800">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4">Private Events</h3>
-                <p className="text-gray-300">
-                  From intimate gatherings to grand celebrations, we tailor our performances to suit your unique occasion and venue.
-                </p>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
