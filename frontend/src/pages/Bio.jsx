@@ -127,50 +127,6 @@ const Bio = () => {
         </div>
       </section>
 
-      {/* What We Do */}
-      <section className="py-20 px-4 bg-zinc-900">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <Globe className="w-16 h-16 mx-auto mb-6" />
-            <h2 className="text-4xl font-bold mb-4">What We Do</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="bg-black border-zinc-800">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4">South Asian Weddings</h3>
-                <p className="text-gray-300">
-                  We specialize in creating the perfect ambiance for South Asian weddings, from elegant string quartets for ceremonies to high-energy performances for receptions.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-black border-zinc-800">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4">Corporate Events</h3>
-                <p className="text-gray-300">
-                  Add cultural flair to your corporate functions with our sophisticated ensemble performances, perfect for galas, launches, and celebrations.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-black border-zinc-800">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4">Festivals & Concerts</h3>
-                <p className="text-gray-300">
-                  Our festival-ready performances bring energy and authenticity to major stages, captivating diverse audiences with our eclectic sound.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-black border-zinc-800">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4">Private Events</h3>
-                <p className="text-gray-300">
-                  From intimate gatherings to grand celebrations, we tailor our performances to suit your unique occasion and venue.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Timeline */}
       <section className="py-20 px-4 bg-black">
         <div className="max-w-5xl mx-auto">
