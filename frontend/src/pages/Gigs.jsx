@@ -73,8 +73,8 @@ const Gigs = () => {
             <p className="text-center text-gray-400 text-xl">No upcoming shows scheduled. Check back soon!</p>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {upcomingEvents.map((event) => (
-                <Card key={event._id} className="bg-black border-zinc-800 hover:border-zinc-600 transition-all duration-300">
+              {upcomingEvents.map((event, index) => (
+                <Card key={event.id || event._id || index} className="bg-black border-zinc-800 hover:border-zinc-600 transition-all duration-300">
                   <CardHeader>
                     <CardTitle className="text-2xl text-white">{event.title}</CardTitle>
                   </CardHeader>
