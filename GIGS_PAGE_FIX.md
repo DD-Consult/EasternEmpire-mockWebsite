@@ -10,7 +10,26 @@ The Gigs page was glitching out after deployment to Netlify. This was caused by:
 
 ## Solution Implemented
 
-### 1. Safe Backend URL Handling
+### 1. Static Events Fallback
+
+Added a `STATIC_EVENTS` array containing 6 events:
+
+**Past Performances (3 events):**
+1. Sydney Festival 2025 - Domain Theatre (Aug 15, 2025)
+2. Cultural Night at Opera House - Sydney Opera House Studio (Sep 20, 2025)
+3. Diwali Festival Performance - Parramatta Park (Oct 25, 2025)
+
+**Upcoming Shows (3 events):**
+1. New Year's Eve Gala - The Star Event Centre (Dec 31, 2025)
+2. Australia Day Concert - Darling Harbour (Jan 26, 2026)
+3. Valentine's Concert Series - City Recital Hall (Feb 14, 2026)
+
+These events display automatically when:
+- Backend URL is not configured (Netlify deployment)
+- Backend API fails to respond
+- Any error occurs during API fetch
+
+### 2. Safe Backend URL Handling
 ```javascript
 // Before (would crash if BACKEND_URL is undefined)
 const API = `${BACKEND_URL}/api`;
