@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "Eastern Empire API Testing - Test all backend API endpoints for health check, newsletter subscription, contact form, events, and booking inquiries"
+user_problem_statement: "Eastern Empire website - Dynamic event integration on Gigs page. Backend events API already exists and is tested. Frontend Gigs page now displays events dynamically from backend with updated seed data containing future event dates."
 
 backend:
   - task: "Health Check API"
