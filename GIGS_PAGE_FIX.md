@@ -112,9 +112,11 @@ Added error state to the UI:
 
 **Result:**
 - ✅ Page loads without crashing
-- ✅ Shows "No upcoming shows scheduled" message
+- ✅ Shows static fallback events (6 events total)
+- ✅ 3 upcoming shows display correctly
+- ✅ 3 past performances display correctly
 - ✅ Rest of site works normally
-- ⚠️ No dynamic events (static site mode)
+- ✅ Full functionality with static data
 
 ### Scenario 3: Backend Temporarily Down
 **Configuration:**
