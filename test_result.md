@@ -208,7 +208,17 @@ backend:
         comment: "GET /api/bookings endpoint working correctly, returns list of booking inquiries sorted by creation date"
 
 frontend:
-  # Frontend testing not performed as per instructions
+  - task: "Gigs Page - Dynamic Event Display"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/Gigs.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Gigs page successfully fetches events from backend API and displays them dynamically. Shows upcoming vs past events correctly. All 3 events with future dates now display in Upcoming Shows section with proper formatting, venue info, dates/times, descriptions, and ticket buttons."
 
 metadata:
   created_by: "testing_agent"
