@@ -64,6 +64,11 @@ const Gigs = () => {
           <h2 className="text-4xl font-bold mb-12 text-center">Upcoming Shows</h2>
           {loading ? (
             <p className="text-center text-gray-400">Loading events...</p>
+          ) : error ? (
+            <div className="text-center">
+              <p className="text-gray-400 text-xl mb-4">{error}</p>
+              <p className="text-gray-500">Please check back later or contact us for booking information.</p>
+            </div>
           ) : upcomingEvents.length === 0 ? (
             <p className="text-center text-gray-400 text-xl">No upcoming shows scheduled. Check back soon!</p>
           ) : (
