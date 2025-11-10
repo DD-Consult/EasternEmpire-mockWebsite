@@ -63,32 +63,6 @@ const Home = () => {
     setLoading(false);
   };
 
-  const handleContactSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    try {
-      await axios.post(`${API}/contact`, contactForm);
-      toast({
-        title: 'Message Sent!',
-        description: 'We\'ll get back to you soon.',
-      });
-      setContactForm({
-        firstName: '',
-        lastName: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-    } catch (error) {
-      toast({
-        title: 'Error',
-        description: 'Failed to send message. Please try again.',
-        variant: 'destructive',
-      });
-    }
-    setLoading(false);
-  };
-
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
