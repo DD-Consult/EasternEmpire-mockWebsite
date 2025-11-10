@@ -28,8 +28,28 @@ const Bookings = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    
     try {
+      // Encode form data for Netlify
+      const encode = (data) => {
+        return Object.keys(data)
+          .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+          .join("&");
+      };
+
+      // Submit to Netlify Forms
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": "booking-form",
+          ...bookingForm
+        })
+      });
+
+      // Also submit to backend API
       await axios.post(`${API}/bookings`, bookingForm);
+      
       toast({
         title: 'Booking Inquiry Sent!',
         description: 'We\'ll get back to you within 24 hours.',
