@@ -169,9 +169,9 @@ backend:
     implemented: true
     working: true
     file: "/app/backend/server.py"
-    stuck_count: 1
+    stuck_count: 0
     priority: "high"
-    needs_retesting: false
+    needs_retesting: true
     status_history:
       - working: false
         agent: "testing"
@@ -179,6 +179,9 @@ backend:
       - working: true
         agent: "testing"
         comment: "Fixed ObjectId conversion issue in get_events function. Now returns 3 seeded events correctly"
+      - working: true
+        agent: "main"
+        comment: "Updated seed data with future dates (Dec 2025, Jan 2026, Feb 2026) so events show as upcoming instead of past events"
 
   - task: "Booking Inquiry API"
     implemented: true
