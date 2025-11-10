@@ -115,8 +115,8 @@ const Gigs = () => {
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl font-bold mb-12 text-center">Past Performances</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {pastEvents.map((event) => (
-                <Card key={event._id} className="bg-zinc-900 border-zinc-800">
+              {pastEvents.map((event, index) => (
+                <Card key={event.id || event._id || index} className="bg-zinc-900 border-zinc-800">
                   <CardHeader>
                     <CardTitle className="text-lg text-white">{event.title}</CardTitle>
                   </CardHeader>
