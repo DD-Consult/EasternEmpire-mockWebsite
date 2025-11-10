@@ -4,7 +4,7 @@ import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { useToast } from '../hooks/use-toast';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Music, Image as ImageIcon } from 'lucide-react';
 import axios from 'axios';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
