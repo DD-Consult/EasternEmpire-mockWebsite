@@ -22,12 +22,12 @@ async def seed_events():
     events = [
         {
             "id": "1",
-            "title": "Sydney Festival 2025",
+            "title": "Sydney Festival 2026",
             "venue": "Domain Theatre",
             "address": "1 Art Gallery Road, The Domain, Sydney NSW 2000",
-            "date": "2025-08-15",
+            "date": "2025-12-15",
             "time": "7:00 PM",
-            "description": "Join us for an unforgettable evening of South Asian fusion music at Sydney Festival 2025. Experience Eastern Empire's electrifying performance featuring both traditional and contemporary hits.",
+            "description": "Join us for an unforgettable evening of South Asian fusion music at Sydney Festival 2026. Experience Eastern Empire's electrifying performance featuring both traditional and contemporary hits.",
             "ticketUrl": "https://www.sydneyfestival.org.au/"
         },
         {
@@ -35,7 +35,7 @@ async def seed_events():
             "title": "Cultural Night at Opera House",
             "venue": "Sydney Opera House - Studio",
             "address": "Bennelong Point, Sydney NSW 2000",
-            "date": "2025-09-20",
+            "date": "2026-01-20",
             "time": "8:00 PM",
             "description": "An intimate evening celebrating South Asian music and culture. Limited seating available.",
             "ticketUrl": "https://www.sydneyoperahouse.com/"
@@ -45,7 +45,7 @@ async def seed_events():
             "title": "Diwali Festival Performance",
             "venue": "Parramatta Park",
             "address": "Pitt Street &, Macquarie Street, Parramatta NSW 2150",
-            "date": "2025-10-25",
+            "date": "2026-02-25",
             "time": "6:00 PM",
             "description": "Celebrate the festival of lights with Eastern Empire! Free entry, family-friendly event.",
             "ticketUrl": None
