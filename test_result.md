@@ -237,3 +237,5 @@ test_plan:
 agent_communication:
   - agent: "testing"
     message: "Completed comprehensive testing of all Eastern Empire API endpoints. Found and fixed one critical issue with Events API ObjectId conversion. All 8 API endpoints now working correctly: health check, newsletter subscription/retrieval, contact form/retrieval, events retrieval, and booking inquiry/retrieval. Created backend_test.py for future testing. All CRUD operations validated with proper error handling."
+  - agent: "main"
+    message: "Completed dynamic event integration on Gigs page. Updated seed_data.py with future event dates (Dec 2025, Jan 2026, Feb 2026). Cleared old events and re-seeded database. Frontend Gigs.jsx was already configured to fetch from backend API. Verified all 3 events now display correctly in Upcoming Shows section with proper formatting. Backend API endpoint needs retesting with new data."
