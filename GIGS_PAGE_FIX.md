@@ -124,9 +124,10 @@ Added error state to the UI:
 
 **Result:**
 - ✅ Page loads successfully
-- ✅ Shows error message: "Unable to load events at this time"
-- ✅ Provides fallback instructions
-- ✅ Site remains usable
+- ✅ Automatically falls back to static events
+- ✅ Shows 6 events (3 upcoming + 3 past)
+- ✅ No error message shown (seamless fallback)
+- ✅ Site remains fully functional
 
 ## Testing Performed
 
