@@ -214,6 +214,7 @@ const Bookings = () => {
                   <label className="block text-sm font-medium mb-2 text-white">Full Name *</label>
                   <Input
                     type="text"
+                    name="name"
                     placeholder="Enter your full name"
                     value={bookingForm.name}
                     onChange={(e) => setBookingForm({ ...bookingForm, name: e.target.value })}
@@ -226,6 +227,7 @@ const Bookings = () => {
                     <label className="block text-sm font-medium mb-2 text-white">Email *</label>
                     <Input
                       type="email"
+                      name="email"
                       placeholder="your.email@example.com"
                       value={bookingForm.email}
                       onChange={(e) => setBookingForm({ ...bookingForm, email: e.target.value })}
@@ -237,6 +239,7 @@ const Bookings = () => {
                     <label className="block text-sm font-medium mb-2 text-white">Phone (Optional)</label>
                     <Input
                       type="tel"
+                      name="phone"
                       placeholder="04XX XXX XXX"
                       value={bookingForm.phone}
                       onChange={(e) => setBookingForm({ ...bookingForm, phone: e.target.value })}
@@ -246,6 +249,7 @@ const Bookings = () => {
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2 text-white">Event Type *</label>
+                  <input type="hidden" name="eventType" value={bookingForm.eventType} />
                   <Select
                     value={bookingForm.eventType}
                     onValueChange={(value) => setBookingForm({ ...bookingForm, eventType: value })}
@@ -268,6 +272,7 @@ const Bookings = () => {
                   <label className="block text-sm font-medium mb-2 text-white">Event Date (Optional)</label>
                   <Input
                     type="date"
+                    name="eventDate"
                     value={bookingForm.eventDate}
                     onChange={(e) => setBookingForm({ ...bookingForm, eventDate: e.target.value })}
                     className="bg-zinc-900 border-zinc-700 text-white [color-scheme:dark]"
@@ -277,6 +282,7 @@ const Bookings = () => {
                   <label className="block text-sm font-medium mb-2 text-white">Venue/Location (Optional)</label>
                   <Input
                     type="text"
+                    name="venue"
                     placeholder="e.g., Sydney Opera House or TBD"
                     value={bookingForm.venue}
                     onChange={(e) => setBookingForm({ ...bookingForm, venue: e.target.value })}
@@ -285,6 +291,7 @@ const Bookings = () => {
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2 text-gray-300">Preferred Band Configuration (Optional)</label>
+                  <input type="hidden" name="configuration" value={bookingForm.configuration} />
                   <Select
                     value={bookingForm.configuration}
                     onValueChange={(value) => setBookingForm({ ...bookingForm, configuration: value })}
@@ -303,6 +310,7 @@ const Bookings = () => {
                 <div>
                   <label className="block text-sm font-medium mb-2 text-gray-300">Additional Details (Optional)</label>
                   <Textarea
+                    name="message"
                     value={bookingForm.message}
                     onChange={(e) => setBookingForm({ ...bookingForm, message: e.target.value })}
                     rows={6}
