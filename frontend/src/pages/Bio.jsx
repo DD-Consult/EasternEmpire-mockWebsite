@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardContent } from '../components/ui/card';
-import { Users, Music, Award, Globe } from 'lucide-react';
+import { Users, Music, Award } from 'lucide-react';
 
 const Bio = () => {
   const members = [
