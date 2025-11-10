@@ -210,7 +210,7 @@ const Bookings = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-2 text-white">Phone</label>
+                    <label className="block text-sm font-medium mb-2 text-white">Phone (Optional)</label>
                     <Input
                       type="tel"
                       placeholder="04XX XXX XXX"
@@ -241,7 +241,7 @@ const Bookings = () => {
                   </Select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2 text-white">Event Date</label>
+                  <label className="block text-sm font-medium mb-2 text-white">Event Date (Optional)</label>
                   <Input
                     type="date"
                     value={bookingForm.eventDate}
@@ -250,7 +250,7 @@ const Bookings = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2 text-white">Venue/Location</label>
+                  <label className="block text-sm font-medium mb-2 text-white">Venue/Location (Optional)</label>
                   <Input
                     type="text"
                     placeholder="e.g., Sydney Opera House or TBD"
